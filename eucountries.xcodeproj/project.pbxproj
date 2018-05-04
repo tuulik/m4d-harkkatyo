@@ -15,6 +15,7 @@
 		D099CC6A209473950094AD5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D099CC68209473950094AD5C /* LaunchScreen.storyboard */; };
 		D099CC75209473950094AD5C /* eucountriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D099CC74209473950094AD5C /* eucountriesTests.swift */; };
 		D099CC80209473950094AD5C /* eucountriesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D099CC7F209473950094AD5C /* eucountriesUITests.swift */; };
+		D099CC8E20947CA00094AD5C /* eucountries.swift in Sources */ = {isa = PBXBuildFile; fileRef = D099CC8D20947CA00094AD5C /* eucountries.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		D099CC7B209473950094AD5C /* eucountriesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = eucountriesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D099CC7F209473950094AD5C /* eucountriesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eucountriesUITests.swift; sourceTree = "<group>"; };
 		D099CC81209473950094AD5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D099CC8D20947CA00094AD5C /* eucountries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eucountries.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				D099CC66209473950094AD5C /* Assets.xcassets */,
 				D099CC68209473950094AD5C /* LaunchScreen.storyboard */,
 				D099CC6B209473950094AD5C /* Info.plist */,
+				D099CC8D20947CA00094AD5C /* eucountries.swift */,
 			);
 			path = eucountries;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			files = (
 				D099CC62209473930094AD5C /* DetailViewController.swift in Sources */,
 				D099CC60209473930094AD5C /* MasterViewController.swift in Sources */,
+				D099CC8E20947CA00094AD5C /* eucountries.swift in Sources */,
 				D099CC5E209473930094AD5C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

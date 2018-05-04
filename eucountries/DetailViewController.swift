@@ -16,27 +16,31 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var population: UILabel!
     @IBOutlet weak var joindate: UILabel!
     @IBOutlet weak var partdate: UILabel!
+    @IBOutlet weak var flag: UIImageView!
 
     func configureView() {
         // Update the user interface for the detail item.
-        if let detail = detailItem {
+        if let country = detailItem {
             if let nameLabel = name {
-                nameLabel.text = detail.name
+                nameLabel.text = country.name
             }
             if let capitalLabel = capital {
-                capitalLabel.text = detail.capital?.name
+                capitalLabel.text = country.capital?.name
             }
             if let areaLabel = area {
-                areaLabel.text = String(detail.area) + " km2"
+                areaLabel.text = String(country.area) + " km2"
             }
             if let populationLabel = population {
-                populationLabel.text = String(detail.population)
+                populationLabel.text = String(country.population)
             }
             if let joinLabel = joindate {
-                joinLabel.text = detail.joinedUnionDate
+                joinLabel.text = country.joinedUnionDate
             }
             if let partLabel = partdate {
-                partLabel.text = detail.exitedUnionDate
+                partLabel.text = country.exitedUnionDate
+            }
+            if let flagImage = flag {
+                flagImage.image = UIImage(named: country.code)
             }
         }
     }

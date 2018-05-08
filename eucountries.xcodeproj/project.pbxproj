@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D00AA89620A181C1004032EE /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00AA89520A181C1004032EE /* WebViewController.swift */; };
 		D099CC5E209473930094AD5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D099CC5D209473930094AD5C /* AppDelegate.swift */; };
 		D099CC60209473930094AD5C /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D099CC5F209473930094AD5C /* MasterViewController.swift */; };
 		D099CC62209473930094AD5C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D099CC61209473930094AD5C /* DetailViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D00AA89520A181C1004032EE /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		D099CC5A209473930094AD5C /* eucountries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eucountries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D099CC5D209473930094AD5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D099CC5F209473930094AD5C /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				D099CC68209473950094AD5C /* LaunchScreen.storyboard */,
 				D099CC6B209473950094AD5C /* Info.plist */,
 				D099CC8D20947CA00094AD5C /* eucountries.swift */,
+				D00AA89520A181C1004032EE /* WebViewController.swift */,
 			);
 			path = eucountries;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				D099CC62209473930094AD5C /* DetailViewController.swift in Sources */,
 				D099CC60209473930094AD5C /* MasterViewController.swift in Sources */,
 				D099CC8E20947CA00094AD5C /* eucountries.swift in Sources */,
+				D00AA89620A181C1004032EE /* WebViewController.swift in Sources */,
 				D099CC5E209473930094AD5C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

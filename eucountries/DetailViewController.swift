@@ -17,7 +17,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var joindate: UILabel!
     @IBOutlet weak var partdate: UILabel!
     @IBOutlet weak var flag: UIImageView!
-
+    @IBOutlet weak var wikibutton: UIButton!
+    
     func configureView() {
         // Update the user interface for the detail item.
         if let country = detailItem {
@@ -42,9 +43,23 @@ class DetailViewController: UIViewController {
             if let flagImage = flag {
                 flagImage.image = UIImage(named: country.code)
             }
+            if let button = wikibutton {
+                button.setImage(#imageLiteral(resourceName: "wikipedia"), for: .normal)
+            }
         }
     }
 
+    // MARK: - Segues
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "countryWikipedia" {
+            let controller = (segue.destination as! UINavigationController).topViewController as! WebViewController
+            if let name = detailItem?.name {
+                controller.urlText = "https://en.wikipedia.org/wiki/" + name
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

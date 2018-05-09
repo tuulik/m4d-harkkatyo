@@ -10,8 +10,10 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    var countries = [eucountries.Country]()
+    
     @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var capital: UILabel!
+    @IBOutlet weak var capital: UIButton!
     @IBOutlet weak var area: UILabel!
     @IBOutlet weak var population: UILabel!
     @IBOutlet weak var joindate: UILabel!
@@ -25,8 +27,8 @@ class DetailViewController: UIViewController {
             if let nameLabel = name {
                 nameLabel.text = country.name
             }
-            if let capitalLabel = capital {
-                capitalLabel.text = country.capital?.name
+            if let capitalButton = capital {
+                capitalButton.setTitle(country.capital?.name, for: .normal) 
             }
             if let areaLabel = area {
                 areaLabel.text = String(country.area) + " km2"
@@ -57,6 +59,10 @@ class DetailViewController: UIViewController {
             if let name = detailItem?.name {
                 controller.urlText = "https://en.wikipedia.org/wiki/" + name
             }
+        }
+        if segue.identifier == "map" {
+            let controller = (segue.destination as! UINavigationController).topViewController as! MapViewController
+            controller.countries = countries
         }
     }
     

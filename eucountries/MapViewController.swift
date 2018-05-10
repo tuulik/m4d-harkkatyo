@@ -12,6 +12,7 @@ import MapKit
 class MapViewController: UIViewController {
 
     var countries = [eucountries.Country]()
+    var currentLocation = CLLocationCoordinate2D()
     
     @IBOutlet weak var map: MKMapView!
     
@@ -28,6 +29,11 @@ class MapViewController: UIViewController {
                 }
             }
         }
+        var region = MKCoordinateRegion()
+        region.center = currentLocation
+        region.span.latitudeDelta = 3
+        region.span.longitudeDelta = 3
+        map.setRegion(region, animated: false)
     }
 
     override func didReceiveMemoryWarning() {

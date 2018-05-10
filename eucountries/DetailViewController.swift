@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class DetailViewController: UIViewController {
 
@@ -63,6 +64,11 @@ class DetailViewController: UIViewController {
         if segue.identifier == "map" {
             let controller = (segue.destination as! UINavigationController).topViewController as! MapViewController
             controller.countries = countries
+            if let latitude = detailItem?.capital?.location.latitude {
+                if let longitude = detailItem?.capital?.location.longitude {
+                    controller.currentLocation = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+                }
+            }
         }
     }
     

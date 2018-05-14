@@ -51,5 +51,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Show user location when viewing capitals on map</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Show user location when viewing capitals on map</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Show user location when viewing capitals on map</string>
 </dict>
 </plist>

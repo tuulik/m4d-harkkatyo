@@ -8,11 +8,13 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, MKMapViewDelegate {
 
     var countries = [eucountries.Country]()
     var currentLocation = CLLocationCoordinate2D()
+    var locationManager = CLLocationManager()
     
     @IBOutlet weak var map: MKMapView!
     
@@ -20,6 +22,8 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.map.delegate = self
+        map.register(SelectedCapitalMarker.self, forAnnotationViewWithReuseIdentifier: "selectedCapital")
         for country in countries {
             if let latitude = country.capital?.location.latitude {
                 if let longitude = country.capital?.location.longitude {
@@ -29,11 +33,13 @@ class MapViewController: UIViewController {
                 }
             }
         }
+        locationManager.requestWhenInUseAuthorization()
         var region = MKCoordinateRegion()
         region.center = currentLocation
         region.span.latitudeDelta = 3
         region.span.longitudeDelta = 3
         map.setRegion(region, animated: false)
+        map.showsUserLocation = true
     }
 
     override func didReceiveMemoryWarning() {

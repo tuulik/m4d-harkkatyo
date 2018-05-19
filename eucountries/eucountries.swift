@@ -56,13 +56,14 @@ class Country: Member, CustomStringConvertible {
     var area: Int = 0
     var population: Int = 0
     
-    init(code: String, name: String, capital: City?, area: Int, population: Int, joined: String) {
+    init(code: String, name: String, capital: City?, area: Int, population: Int, joined: String, exited: String = "") {
         self.code = code
         self.name = name
         self.capital = capital
         self.area = area
         self.population = population
         self.joinedUnionDate = joined
+        self.exitedUnionDate = exited
     }
     
     var populationDensity: Int {

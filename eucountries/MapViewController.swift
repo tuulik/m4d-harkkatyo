@@ -23,7 +23,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
 
         // Do any additional setup after loading the view.
         self.map.delegate = self
-        map.register(SelectedCapitalMarker.self, forAnnotationViewWithReuseIdentifier: "selectedCapital")
         for country in countries {
             if let latitude = country.capital?.location.latitude {
                 if let longitude = country.capital?.location.longitude {
@@ -47,6 +46,29 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard !(annotation is MKUserLocation) else {
+            return nil
+        }
+        let reuseIdentifier = "pin"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier)
+        if annotationView == nil {
+            annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
+        } else {
+            annotationView?.annotation = annotation
+        }
+        if (annotation.coordinate.latitude == currentLocation.latitude && annotation.coordinate.longitude == currentLocation.longitude) {
+            if let marker = annotationView as? MKMarkerAnnotationView {
+              marker.markerTintColor = UIColor.green
+            }
+        } else {
+            print("not current location")
+            if let marker = annotationView as? MKMarkerAnnotationView {
+              marker.markerTintColor = UIColor.red
+            }
+        }
+        return annotationView
+    }
 
     /*
     // MARK: - Navigation
